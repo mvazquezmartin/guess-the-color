@@ -24,6 +24,7 @@ function eventListenerColor(color, colorSpan, property) {
     const colorValue = color.value;
     colorSpan.textContent = colorValue;
     clickAudio.currentTime = 0;
+    clickAudio.load();
     clickAudio.play();
     document.documentElement.style.setProperty(property, colorValue);
   });

@@ -23,7 +23,7 @@ function eventListenerColor(color, colorSpan, property) {
   color.addEventListener('input', () => {
     const colorValue = color.value;
     colorSpan.textContent = colorValue;
-    clickAudio.currentTime = 0;    
+    clickAudio.currentTime = 0;
     clickAudio.play();
     document.documentElement.style.setProperty(property, colorValue);
   });
@@ -85,6 +85,9 @@ $buttonGuess.addEventListener('click', () => {
   const redValue = parseInt($red.value);
   const greenValue = parseInt($green.value);
   const blueValue = parseInt($blue.value);
+
+  clickAudio.currentTime = 0;
+  clickAudio.play();
 
   const hearts = document.querySelectorAll('.hearts svg');
 

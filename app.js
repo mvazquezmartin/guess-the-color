@@ -15,6 +15,7 @@ const $pyro = document.querySelector('#pyro');
 const $pyroBefore = document.querySelector('#before');
 const $pyroAfter = document.querySelector('#after');
 
+const clickAudio = new Audio('/click-1.wav');
 const ATTEMPS = 5;
 let attempt = ATTEMPS;
 
@@ -22,6 +23,8 @@ function eventListenerColor(color, colorSpan, property) {
   color.addEventListener('input', () => {
     const colorValue = color.value;
     colorSpan.textContent = colorValue;
+    clickAudio.currentTime = 0;
+    clickAudio.play();
     document.documentElement.style.setProperty(property, colorValue);
   });
 }

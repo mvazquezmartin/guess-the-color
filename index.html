@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guess the Color</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>GUESS THE COLOR</h1>
+      <div class="container-color">
+        <div class="color-result"></div>
+        <div class="color-guess"></div>
+      </div>
+      <div class="color-maker">
+        <label>
+          <span>RED</span>
+          <span class="red-value">0</span>
+          <input type="range" value="0" steps="1" max="255" class="color-r" />
+        </label>
+        <label>
+          <span>GREEN</span>
+          <span class="green-value">0</span>
+          <input type="range" value="0" steps="1" max="255" class="color-g" />
+        </label>
+        <label>
+          <span>BLUE</span>
+          <span class="blue-value">0</span>
+          <input type="range" value="0" steps="1" max="255" class="color-b" />
+        </label>
+      </div>
+      <div class="attemps-container">
+        <span class="attemps">ATTEMPS:</span>
+        <div class="hearts"></div>
+      </div>
+      <div class="percentage"></div>
+      <div class="button-container">
+        <button class="button-guess">GUESS</button>
+        <button class="button-reset">RESET</button>
+      </div>
+      <div id="pyro">
+        <div id="before"></div>
+        <div id="after"></div>
+      </div>
+    </main>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

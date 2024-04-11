@@ -21,8 +21,8 @@ const $decrementG = document.querySelector('#decrement-button-g');
 const $incrementB = document.querySelector('#increment-button-b');
 const $decrementB = document.querySelector('#decrement-button-b');
 
-const clickAudio = new Audio('./assets/click-1.wav');
-const ATTEMPS = 5;
+const clickAudio = new Audio('/assets/click-1.wav');
+const ATTEMPS = 7;
 let attempt = ATTEMPS;
 
 function eventListenerColor(
@@ -138,7 +138,7 @@ $buttonGuess.addEventListener('click', () => {
 
   if (redValue === r && greenValue === g && blueValue === b) {
     $percentaje.style.visibility = 'visible';
-    $percentaje.textContent = 'Congratulations! You guessed the color.';
+    $percentaje.textContent = 'CONGRATULATIONS! You guessed the color.';
     $percentaje.style.color = '#F7D51D';
     $buttonGuess.disabled = true;
     $pyro.classList.add('pyro');
@@ -152,6 +152,7 @@ $buttonGuess.addEventListener('click', () => {
       $attemps.style.fontSize = '2rem';
       hearts[0].style.fill = '#CCC';
       $buttonGuess.disabled = true;
+      $percentaje.style.color = '#F7D51D';
       $percentaje.textContent = guessColor;
     } else {
       const maxDistance = Math.sqrt(

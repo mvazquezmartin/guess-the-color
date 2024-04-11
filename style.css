@@ -59,7 +59,6 @@ body {
     }
 
     h1 {
-      color: #fff;
       animation: customRainbow 5s infinite;
       -webkit-text-stroke-width: 1px;
       -webkit-text-stroke-color: #000;
@@ -190,6 +189,7 @@ body {
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: #000;
         text-align: center;
+        height: 2rem;
       }
       .hearts {
         display: flex;
@@ -198,9 +198,14 @@ body {
     }
 
     .percentage {
+      display: flex;
       text-align: center;
-      max-width: 50ch;
       user-select: none;
+      height: 3ch;
+      justify-content: center;
+      align-items: center;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #000;
     }
 
     .button-container {
@@ -214,7 +219,7 @@ body {
         font-family: 'Press Start 2P';
         font-size: 1.3rem;
         text-align: center;
-        display: inline-block;        
+        display: inline-block;
         font-weight: bold;
         padding: 10px;
         background-color: #e76e55;

@@ -41,20 +41,20 @@ function eventListenerColor(
   });
 
   increment.addEventListener('click', () => {
+    clickAudio.currentTime = 0;
+    clickAudio.play();
     if (color.value < 255) {
       color.value++;
       colorSpan.textContent++;
-      clickAudio.currentTime = 0;
-      clickAudio.play();
     }
   });
 
   decrement.addEventListener('click', () => {
+    clickAudio.currentTime = 0;
+    clickAudio.play();
     if (color.value > 0) {
       color.value--;
       colorSpan.textContent--;
-      clickAudio.currentTime = 0;
-      clickAudio.play();
     }
   });
 }
@@ -108,9 +108,6 @@ $buttonReset.addEventListener('click', () => {
   $red.value = 0;
   $green.value = 0;
   $blue.value = 0;
-  eventListenerColor($red, '--red');
-  eventListenerColor($green, '--green');
-  eventListenerColor($blue, '--blue');
   $red.dispatchEvent(new Event('input'));
   $green.dispatchEvent(new Event('input'));
   $blue.dispatchEvent(new Event('input'));

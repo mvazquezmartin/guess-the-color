@@ -6,6 +6,7 @@
 }
 * {
   box-sizing: border-box;
+  user-select: none;
 }
 body {
   display: flex;
@@ -15,6 +16,7 @@ body {
   background-color: #333;
   padding: 2rem 0;
   position: relative;
+  overflow-x: hidden;
   @media only screen and (max-width: 480px) {
     & {
       padding: 0;
@@ -138,7 +140,6 @@ body {
               border-radius: 7px;
               box-shadow: 0 0.2em gray;
               cursor: pointer;
-              user-select: none;
 
               &:active {
                 box-shadow: none;
@@ -194,13 +195,15 @@ body {
       .hearts {
         display: flex;
         column-gap: 0.5rem;
+        #Heart {
+          transition: fill 0.5s ease;
+        }
       }
     }
 
     .percentage {
       display: flex;
       text-align: center;
-      user-select: none;
       height: 3ch;
       justify-content: center;
       align-items: center;
@@ -233,7 +236,6 @@ body {
         border-radius: 7px;
         box-shadow: 0 0.2em #ce372b;
         cursor: pointer;
-        user-select: none;
         transition: background-color 0.2s ease;
 
         &:hover {

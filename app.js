@@ -6,6 +6,12 @@ const $blue = document.querySelector('.color-b');
 const $redValueSpan = document.querySelector('.red-value');
 const $greenValueSpan = document.querySelector('.green-value');
 const $blueValueSpan = document.querySelector('.blue-value');
+const $incrementR = document.querySelector('#increment-button-r');
+const $decrementR = document.querySelector('#decrement-button-r');
+const $incrementG = document.querySelector('#increment-button-g');
+const $decrementG = document.querySelector('#decrement-button-g');
+const $incrementB = document.querySelector('#increment-button-b');
+const $decrementB = document.querySelector('#decrement-button-b');
 const $buttonReset = document.querySelector('.button-reset');
 const $buttonGuess = document.querySelector('.button-guess');
 const $attemps = document.querySelector('.attemps');
@@ -14,12 +20,6 @@ const $percentaje = document.querySelector('.percentage');
 const $pyro = document.querySelector('#pyro');
 const $pyroBefore = document.querySelector('#before');
 const $pyroAfter = document.querySelector('#after');
-const $incrementR = document.querySelector('#increment-button-r');
-const $decrementR = document.querySelector('#decrement-button-r');
-const $incrementG = document.querySelector('#increment-button-g');
-const $decrementG = document.querySelector('#decrement-button-g');
-const $incrementB = document.querySelector('#increment-button-b');
-const $decrementB = document.querySelector('#decrement-button-b');
 
 const clickAudio = new Audio('./assets/click-1.wav');
 const ATTEMPS = 7;
@@ -76,16 +76,6 @@ function createHearts() {
   }
 }
 
-eventListenerColor($red, $redValueSpan, '--red', $incrementR, $decrementR);
-eventListenerColor(
-  $green,
-  $greenValueSpan,
-  '--green',
-  $incrementG,
-  $decrementG
-);
-eventListenerColor($blue, $blueValueSpan, '--blue', $incrementB, $decrementB);
-
 function init() {
   $pyro.classList.remove('pyro');
   $pyroBefore.classList.remove('before');
@@ -100,6 +90,16 @@ function init() {
   $percentaje.style.visibility = 'hidden';
   colorMaker();
 }
+
+eventListenerColor($red, $redValueSpan, '--red', $incrementR, $decrementR);
+eventListenerColor(
+  $green,
+  $greenValueSpan,
+  '--green',
+  $incrementG,
+  $decrementG
+);
+eventListenerColor($blue, $blueValueSpan, '--blue', $incrementB, $decrementB);
 
 $buttonReset.addEventListener('click', () => {
   attempt = ATTEMPS;

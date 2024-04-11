@@ -1,4 +1,4 @@
-import { heart8bit } from './heart8bit.js';
+import { heart8bit } from './assets/heart8bit.js';
 
 const $red = document.querySelector('.color-r');
 const $green = document.querySelector('.color-g');
@@ -21,7 +21,7 @@ const $decrementG = document.querySelector('#decrement-button-g');
 const $incrementB = document.querySelector('#increment-button-b');
 const $decrementB = document.querySelector('#decrement-button-b');
 
-const clickAudio = new Audio('./click-1.wav');
+const clickAudio = new Audio('./assets/click-1.wav');
 const ATTEMPS = 5;
 let attempt = ATTEMPS;
 

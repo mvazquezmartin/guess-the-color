@@ -36,7 +36,7 @@ body {
 
   .container {
     background-color: #444;
-    color: #e1e1e1;
+    color: #fff;
     font-family: 'Press Start 2P';
     display: flex;
     flex-direction: column;
@@ -102,9 +102,18 @@ body {
         font-size: 1.3rem;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: #000;
-      }
-      input {
-        width: 100%;
+
+        #quantity-r, #quantity-g, #quantity-b{
+          background-color: #00000000;
+          border: none;
+          color: #fff;
+          font-family: 'Press Start 2P';
+          font-size: 1.3rem;
+        }
+        
+        .color-r, .color-g, .color-b {
+          width: 100%;
+        }
       }
       /* .color-r {
       }

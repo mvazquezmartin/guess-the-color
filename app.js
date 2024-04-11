@@ -21,7 +21,7 @@ const $decrementG = document.querySelector('#decrement-button-g');
 const $incrementB = document.querySelector('#increment-button-b');
 const $decrementB = document.querySelector('#decrement-button-b');
 
-const clickAudio = new Audio('/assets/click-1.wav');
+const clickAudio = new Audio('./assets/click-1.wav');
 const ATTEMPS = 7;
 let attempt = ATTEMPS;
 

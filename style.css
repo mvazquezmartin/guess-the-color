@@ -95,7 +95,7 @@ body {
     .color-maker {
       display: flex;
       flex-direction: column;
-      row-gap: 0.7rem;
+      row-gap: 1rem;
       width: 300px;
 
       label {
@@ -103,15 +103,65 @@ body {
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: #000;
 
-        #quantity-r, #quantity-g, #quantity-b{
+        .value-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .quantity {
+            display: flex;
+            align-items: center;
+
+            .button-value {
+              text-align: center;
+              display: inline-block;
+              margin: 5px;
+              font-weight: bold;
+              padding: 5px 2px 5px 2px;
+              background-color: lightgray;
+              text-shadow: -1px -1px black, 1px 1px white;
+              color: gray;
+              -webkit-border-radius: 7px;
+              -moz-border-radius: 7px;
+              -o-border-radius: 7px;
+              border-radius: 7px;
+              box-shadow: 0 0.2em gray;
+              cursor: pointer;
+              user-select: none;
+
+              &:active {
+                box-shadow: none;
+                position: relative;
+                top: .2em;
+              }
+            }
+          }
+
+          .red-value,
+          .green-value,
+          .blue-value {
+            display: flex;
+            width: 4ch;
+            justify-content: center;
+            border: 1px solid #999;
+            padding: 5px 0;            
+          }
+        }
+
+        #quantity-r,
+        #quantity-g,
+        #quantity-b {
           background-color: #00000000;
           border: none;
           color: #fff;
           font-family: 'Press Start 2P';
           font-size: 1.3rem;
+          appearance: textfield;
         }
-        
-        .color-r, .color-g, .color-b {
+
+        .color-r,
+        .color-g,
+        .color-b {
           width: 100%;
         }
       }
@@ -169,6 +219,7 @@ body {
         border-radius: 7px;
         box-shadow: 0 0.2em #ce372b;
         cursor: pointer;
+        user-select: none;
         transition: background-color 0.2s ease;
 
         &:hover {

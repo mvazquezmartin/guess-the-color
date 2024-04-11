@@ -3,9 +3,9 @@ import { heart8bit } from './heart8bit.js';
 const $red = document.querySelector('.color-r');
 const $green = document.querySelector('.color-g');
 const $blue = document.querySelector('.color-b');
-// const $redValueSpan = document.querySelector('.red-value');
-// const $greenValueSpan = document.querySelector('.green-value');
-// const $blueValueSpan = document.querySelector('.blue-value');
+const $redValueSpan = document.querySelector('.red-value');
+const $greenValueSpan = document.querySelector('.green-value');
+const $blueValueSpan = document.querySelector('.blue-value');
 const $buttonReset = document.querySelector('.button-reset');
 const $buttonGuess = document.querySelector('.button-guess');
 const $attemps = document.querySelector('.attemps');
@@ -14,31 +14,48 @@ const $percentaje = document.querySelector('.percentage');
 const $pyro = document.querySelector('#pyro');
 const $pyroBefore = document.querySelector('#before');
 const $pyroAfter = document.querySelector('#after');
-const $inputNumRed = document.querySelector('#quantity-r');
-const $inputNumGreen = document.querySelector('#quantity-g');
-const $inputNumBlue = document.querySelector('#quantity-b');
+const $incrementR = document.querySelector('#increment-button-r');
+const $decrementR = document.querySelector('#decrement-button-r');
+const $incrementG = document.querySelector('#increment-button-g');
+const $decrementG = document.querySelector('#decrement-button-g');
+const $incrementB = document.querySelector('#increment-button-b');
+const $decrementB = document.querySelector('#decrement-button-b');
 
 const clickAudio = new Audio('./click-1.wav');
 const ATTEMPS = 5;
 let attempt = ATTEMPS;
 
-function eventListenerColor(color, property, inputNumber) {
+function eventListenerColor(
+  color,
+  colorSpan = 0,
+  property,
+  increment,
+  decrement
+) {
   color.addEventListener('input', () => {
     const colorValue = color.value;
-    // colorSpan.textContent = colorValue;
-    inputNumber.value = colorValue;
+    colorSpan.textContent = colorValue;
     clickAudio.currentTime = 0;
     clickAudio.play();
     document.documentElement.style.setProperty(property, colorValue);
   });
 
-  inputNumber.addEventListener('input', () => {
-    const numberValue = inputNumber.value;
-    color.value = numberValue;
-    // colorSpan.textContent = numberValue;
-    clickAudio.currentTime = 0;
-    clickAudio.play();
-    document.documentElement.style.setProperty(property, numberValue);
+  increment.addEventListener('click', () => {
+    if (color.value < 255) {
+      color.value++;
+      colorSpan.textContent++;
+      clickAudio.currentTime = 0;
+      clickAudio.play();
+    }
+  });
+
+  decrement.addEventListener('click', () => {
+    if (color.value > 0) {
+      color.value--;
+      colorSpan.textContent--;
+      clickAudio.currentTime = 0;
+      clickAudio.play();
+    }
   });
 }
 
@@ -59,9 +76,15 @@ function createHearts() {
   }
 }
 
-eventListenerColor($red, '--red', $inputNumRed);
-eventListenerColor($green, '--green', $inputNumGreen);
-eventListenerColor($blue, '--blue', $inputNumBlue);
+eventListenerColor($red, $redValueSpan, '--red', $incrementR, $decrementR);
+eventListenerColor(
+  $green,
+  $greenValueSpan,
+  '--green',
+  $incrementG,
+  $decrementG
+);
+eventListenerColor($blue, $blueValueSpan, '--blue', $incrementB, $decrementB);
 
 function init() {
   $pyro.classList.remove('pyro');
@@ -85,9 +108,9 @@ $buttonReset.addEventListener('click', () => {
   $red.value = 0;
   $green.value = 0;
   $blue.value = 0;
-  eventListenerColor($red, '--red', $inputNumRed);
-  eventListenerColor($green, '--green', $inputNumGreen);
-  eventListenerColor($blue, '--blue', $inputNumBlue);
+  eventListenerColor($red, '--red');
+  eventListenerColor($green, '--green');
+  eventListenerColor($blue, '--blue');
   $red.dispatchEvent(new Event('input'));
   $green.dispatchEvent(new Event('input'));
   $blue.dispatchEvent(new Event('input'));

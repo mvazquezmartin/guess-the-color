@@ -115,9 +115,9 @@ body {
             .button-value {
               text-align: center;
               display: inline-block;
-              margin: 5px;
+              margin: 0 5px;
               font-weight: bold;
-              padding: 5px 2px 5px 2px;
+              padding: 5px;
               background-color: lightgray;
               text-shadow: -1px -1px black, 1px 1px white;
               color: gray;
@@ -144,6 +144,7 @@ body {
             width: 4ch;
             justify-content: center;
             border: 1px solid #999;
+            border-radius: 5px;
             padding: 5px 0;            
           }
         }
@@ -164,13 +165,7 @@ body {
         .color-b {
           width: 100%;
         }
-      }
-      /* .color-r {
-      }
-      .color-g {
-      }
-      .color-b {
-      } */
+      }      
     }
 
     .attemps-container {

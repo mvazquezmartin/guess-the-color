@@ -1,0 +1,35 @@
+{
+  "name": "Guess The Color",
+  "short_name": "mvazquezmartin",
+  "description": "Dive into a captivating RGB guessing game! Adjust sliders to match the mystery color and receive instant feedback. Challenge your perception and master the spectrum in this addictive web app.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#333333",
+  "theme_color": "#444444",
+  "icons": [
+    {
+      "src": "assets/icon_x48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon_x72",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon_x96",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "prefer_related_applications": true,
+  "categories": ["education", "productivity", "game"],
+  "screenshots": [
+    {
+      "src": "assets/screenshot_620x920.png",
+      "sizes": "620x920",
+      "type": "image/png"
+    }
+  ]
+}

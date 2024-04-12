@@ -10,23 +10,29 @@
 }
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  background-color: #333;
-  padding: 2rem 0;
+  background-color: #333;  
   position: relative;
   overflow-x: hidden;
   @media only screen and (max-width: 480px) {
     & {
-      padding: 0;
+      flex-direction: column;
+      margin: 5px;
     }
   }
 
   footer {
     display: flex;
-    justify-content: center;
-    padding: 2rem 1rem;
+    justify-content: start;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    width: 100%;
+    @media only screen and (max-width: 480px) {
+      & {
+        justify-content: center;
+      }
+    }
 
     svg {
       transition: fill 0.3s ease;

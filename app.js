@@ -130,11 +130,19 @@ $buttonGuess.addEventListener('click', () => {
 
   const [r, g, b] = guessColor.match(/\d+/g).map(Number);
 
-  let distance = Math.sqrt(
-    Math.pow(redValue - r, 2) +
-      Math.pow(greenValue - g, 2) +
-      Math.pow(blueValue - b, 2)
-  );
+  let distanceR = Math.abs(redValue - r);
+  let distanceG = Math.abs(greenValue - g);
+  let distanceB = Math.abs(blueValue - b);
+
+  let maxDistance = 255;
+
+  let percentageR = ((maxDistance - distanceR) / maxDistance) * 100;
+  let percentageG = ((maxDistance - distanceG) / maxDistance) * 100;
+  let percentageB = ((maxDistance - distanceB) / maxDistance) * 100;
+
+  let percentageText = `R:${percentageR.toFixed(
+    2
+  )}%<br/>G:${percentageG.toFixed(2)}%<br/>B:${percentageB.toFixed(2)}%`;
 
   if (redValue === r && greenValue === g && blueValue === b) {
     $percentaje.style.visibility = 'visible';
@@ -155,14 +163,8 @@ $buttonGuess.addEventListener('click', () => {
       $percentaje.style.color = '#F7D51D';
       $percentaje.textContent = guessColor;
     } else {
-      const maxDistance = Math.sqrt(
-        Math.pow(255, 2) + Math.pow(255, 2) + Math.pow(255, 2)
-      );
-      let percentage = ((maxDistance - distance) / maxDistance) * 100;
       $percentaje.style.visibility = 'visible';
-      $percentaje.textContent = `You're  ${percentage.toFixed(
-        2
-      )}% away from the correct color.`;
+      $percentaje.innerHTML = percentageText;
       for (let i = 0; i < hearts.length; i++) {
         if (i < attempt) {
           hearts[i].style.fill = '#FF0000';

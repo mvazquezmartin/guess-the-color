@@ -140,14 +140,23 @@ $buttonGuess.addEventListener('click', () => {
   let percentageG = ((maxDistance - distanceG) / maxDistance) * 100;
   let percentageB = ((maxDistance - distanceB) / maxDistance) * 100;
 
-  let percentageText = `R:${percentageR.toFixed(
-    2
-  )}%<br/>G:${percentageG.toFixed(2)}%<br/>B:${percentageB.toFixed(2)}%`;
+  let percentageText;
+
+  if (percentageR === 100 && percentageG === 100 && percentageB === 100) {
+    percentageText = 'R: 100%<br/>G: 100%<br/>B: 100%';
+  } else {
+    percentageText = `R: ${percentageR.toFixed(
+      percentageR === 100 ? 0 : 2
+    )}%<br/>G: ${percentageG.toFixed(
+      percentageG === 100 ? 0 : 2
+    )}%<br/>B: ${percentageB.toFixed(percentageB === 100 ? 0 : 2)}%`;
+  }
 
   if (redValue === r && greenValue === g && blueValue === b) {
     $percentaje.style.visibility = 'visible';
     $percentaje.textContent = 'CONGRATULATIONS! You guessed the color.';
     $percentaje.style.color = '#F7D51D';
+    $percentaje.style.textAlign = 'center';
     $buttonGuess.disabled = true;
     $pyro.classList.add('pyro');
     $pyroBefore.classList.add('before');
@@ -164,6 +173,7 @@ $buttonGuess.addEventListener('click', () => {
       $percentaje.textContent = guessColor;
     } else {
       $percentaje.style.visibility = 'visible';
+      $percentaje.style.textAlign = 'start';
       $percentaje.innerHTML = percentageText;
       for (let i = 0; i < hearts.length; i++) {
         if (i < attempt) {

@@ -36,3 +36,5 @@ This is a simple web application where users can guess an RGB color value by adj
 
 This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/)
 
+## Author
+- [@mvazquezmartin](https://github.com/mvazquezmartin)
